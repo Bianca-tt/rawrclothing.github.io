@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rawr</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    body {
+      font-size: 50px;
+      background-color: #121212;
+      color: white;
+      line-height: 1.6;
+      cursor: url('curser.can.PNG'), auto;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-grow: 1;
+    }
+
+    header nav a {
+      font-size: 3.5rem; 
+    }
+
+    .nav-icon {
+      display: block;
+      width: 500px;
+      height: 500px;
+      position: relative;
+    }
+
+    .nav-icon img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-img {
+      opacity: 0;
+    }
+
+    .nav-icon:hover .hover-img {
+      opacity: 1;
+    }
+
+    .nav-icon:hover .default-img {
+      opacity: 0;
+    }
+
+    nav a:hover {
+      color: #530000;
+    }
+
+
+    .filter-btn {
+  padding: 1rem 2rem;
+  background: #333;
+  border: 2px solid #1e1e1e;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 5rem;
+  margin-right: 1rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #530000;
+}
+
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #530000;
+    }
+
+    .grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+    .grid-item {
+      background: #1e1e1e;
+      border: 1px solid #444;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: scale(1.05);
+    }
+
+    .grid-item img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .grid-item h3 {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+nav img {
+  width: 40px;
+  transition: opacity 0.3s ease;
+}
+
+nav a.nav-icon {
+  display: inline-block;
+  position: relative;
+}
+
+nav a.nav-icon img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+nav a.nav-icon:hover img.default-img {
+  opacity: 0;
+}
+
+nav a.nav-icon:hover img.hover-img {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="nav-icon">
+                <img src="rawr.logo.PNG" alt="Rawr" class="default-img">
+                <img src="rawr.hover.PNG" alt="Rawr Hover" class="hover-img">
+              </a>
+          <a href="gallery.html" class="nav-icon">
+            <img src="gallery.PNG" alt="Gallery" class="default-img">
+            <img src="gallery.hover.PNG" alt="Gallery Hover" class="hover-img">
+          </a>
+          <a href="about.html" class="nav-icon">
+            <img src="about.PNG" alt="About" class="default-img">
+            <img src="about.hover.PNG" alt="About Hover" class="hover-img">
+          </a>
+          <a href="contact.html" class="nav-icon">
+            <img src="contact.PNG" alt="Contact" class="default-img">
+            <img src="contact.hover.PNG" alt="Contact Hover" class="hover-img">
+          </a>
+        </nav>
+      </header>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterItems('all')">All</button>
+  <button class="filter-btn" onclick="filterItems('Singlets')">Singlets</button>
+  <button class="filter-btn" onclick="filterItems('hoodie')">Hoodies</button>
+  <button class="filter-btn" onclick="filterItems('Tees')">Tees</button>
+</div>
+
+<div class="grid" id="galleryGrid">
+  <div class="grid-item Singlets"><img src="brown1.PNG" alt="Singlets 1"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="blue1.PNG" alt="Singlets 2"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="black1.PNG" alt="Singlets 3"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="green1.PNG" alt="Singlets 4"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="grey1.PNG" alt="Singlets 5"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="pink1.PNG" alt="Singlets 6"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="purple1.PNG" alt="Singlets 7"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="red1.PNG" alt="singlets 8"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="white1.PNG" alt="Singlets 9"><h3>Rawr singlet</h3></div>
+
+  <div class="grid-item hoodie"><img src="b.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="bb.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="bl.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="g.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="gr.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="p.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="pu.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="r.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="w.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+
+  <div class="grid-item Tees"><img src="IMG_2176.PNG" alt="Tees 1"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2203.PNG" alt="Tees 2"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2173.PNG" alt="Tees 3"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2202.PNG" alt="Tees 4"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2206.PNG" alt="Tees 5"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2200.PNG" alt="Tees 6"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2201.PNG" alt="Tees 7"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2204.PNG" alt="Tees 8"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2207.PNG" alt="Tees 9"><h3>Rawr Tees</h3></div>
+  
+  <div class="grid-item Singlets"><img src="IMG_2140.PNG" alt="Singlets 1"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2142.PNG" alt="Singlets 2"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2136.PNG" alt="Singlets 3"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2143.PNG" alt="Singlets 4"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2138.PNG" alt="Singlets 5"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2145.PNG" alt="Singlets 6"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2144.PNG" alt="Singlets 7"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2141.PNG" alt="Singlets 8"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2137.PNG" alt="Singlets 9"><h3>Rawr singlet</h3></div>
+
+  <div class="grid-item hoodie"><img src="IMG_2105.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2103.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2108.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2102.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2106.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2100.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2101.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2104.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2107.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+
+  <div class="grid-item Tees"><img src="IMG_2187.PNG" alt="Tees 1"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2196.PNG" alt="Tees 2"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2190.PNG" alt=" Tees 3"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2197.PNG" alt="Tees 4"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2193.PNG" alt="Tees 5"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2199.PNG" alt="Tees 6"><h3>Rawr Tese</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2198.PNG" alt=" Tees 7"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2195.PNG" alt="Tees 8"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2192.PNG" alt="Tees 9"><h3>Rawr Tees</h3></div>
+
+  <div class="grid-item Singlets"><img src="IMG_2151.PNG" alt="Singlets 1"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2149.PNG" alt="Singlets 2"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2154.PNG" alt="Singlets 3"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2148.PNG" alt="Singlets 4"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2152.PNG" alt="Singlets 5"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2146.PNG" alt="Singlets 6"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2147.PNG" alt="Singlets 7"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2150.PNG" alt="Singlets 8"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2153.PNG" alt="Singlets 9"><h3>Rawr singlet</h3></div>
+
+  <div class="grid-item hoodie"><img src="IMG_2112.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2114.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2109.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2115.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2111.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2117.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2116.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2113.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2110.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+
+  <div class="grid-item Tees"><img src="IMG_2194.PNG" alt="Tees 1"><h3>Raw Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2185.PNG" alt="Tees 2"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2191.PNG" alt="Tees 3"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2184.PNG" alt="Tees 4"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2188.PNG" alt="Tees 5"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2182.PNG" alt="Tees 6"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2183.PNG" alt="Tees 7"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2186.PNG" alt="Tees 8"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2189.PNG" alt="Tees 9"><h3>Rawr Tees</h3></div>
+
+  <div class="grid-item Singlets"><img src="IMG_2158.PNG" alt="Singlets 1"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2160.PNG" alt="Singlets 2"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2155.PNG" alt="Singlets 3"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2161.PNG" alt="Singlets 4"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2157.PNG" alt="Singlets 5"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2163.PNG" alt="Singlets 6"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2162.PNG" alt="Singlets 7"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2159.PNG" alt="Singlets 8"><h3>Rawr singlet</h3></div>
+  <div class="grid-item Singlets"><img src="IMG_2156.PNG" alt="Singlets 9"><h3>Rawr singlet</h3></div>
+
+  <div class="grid-item hoodie"><img src="IMG_2123.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2121.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2126.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2120.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2124.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2118.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2119.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2122.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+  <div class="grid-item hoodie"><img src="IMG_2125.PNG" alt="Hoodie 1"><h3>Rawr Hoodie</h3></div>
+
+  <div class="grid-item Tees"><img src="IMG_2205.PNG" alt="Tees 1"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2178.PNG" alt="Tees 2"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2208.PNG" alt="Tees 3"><h3>Rawr Tese</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2179.PNG" alt="Tees 4"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2175.PNG" alt="Tees 5"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2181.PNG" alt="Tees 6"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2180.PNG" alt="Tees 7"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2177.PNG" alt="Tees 8"><h3>Rawr Tees</h3></div>
+  <div class="grid-item Tees"><img src="IMG_2174.PNG" alt="Tees 9"><h3>Rawr Tees</h3></div>
+</div>
+
+<script>
+  function filterItems(category) {
+    const items = document.querySelectorAll('.grid-item');
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    items.forEach(item => {
+      if (category === 'all' || item.classList.contains(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+    function filterItems(category) {
+      const items = document.querySelectorAll('.grid-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+  
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+  
+
+      event.target.classList.add('active');
+  
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

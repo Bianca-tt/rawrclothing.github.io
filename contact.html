@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rawr</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    body {
+      font-size: 50px;
+      background-color: #121212;
+      color: white;
+      line-height: 1.6;
+      cursor: url('curser.can.PNG'), auto;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-grow: 1;
+    }
+
+    header nav a {
+      font-size: 3.5rem; 
+    }
+
+    .nav-icon {
+      display: block;
+      width: 500px;
+      height: 500px;
+      position: relative;
+    }
+
+    .nav-icon img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-img {
+      opacity: 0;
+    }
+
+    .nav-icon:hover .hover-img {
+      opacity: 1;
+    }
+
+    .nav-icon:hover .default-img {
+      opacity: 0;
+    }
+
+    .feedback-widget-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .feedback-widget {
+      background-color: #1e1e1e;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 1010px;
+      max-width: 900px; /* Increased size */
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 4rem; /* Increased font size */
+    }
+
+    label {
+      font-size: 4rem; /* Increased font size */
+      margin-top: 20px;
+      display: block;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 6px;
+      border: 1px solid #1e1e1e;
+      font-size: 3rem; /* Increased font size for inputs */
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 20px;
+      background-color: #530000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 4rem; /* Increased button text size */
+    }
+
+    button:hover {
+      background-color: #53000;
+    }
+
+    .confirmation-message {
+      text-align: center;
+      color: green;
+      font-size: 4rem; /* Increased font size for confirmation */
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-icon">
+        <img src="rawr.logo.PNG" alt="Rawr" class="default-img">
+        <img src="rawr.hover.PNG" alt="Rawr Hover" class="hover-img">
+      </a>
+      <a href="gallery.html" class="nav-icon">
+        <img src="gallery.PNG" alt="Gallery" class="default-img">
+        <img src="gallery.hover.PNG" alt="Gallery Hover" class="hover-img">
+      </a>
+      <a href="about.html" class="nav-icon">
+        <img src="about.PNG" alt="About" class="default-img">
+        <img src="about.hover.PNG" alt="About Hover" class="hover-img">
+      </a>
+      <a href="contact.html" class="nav-icon">
+        <img src="contact.PNG" alt="Contact" class="default-img">
+        <img src="contact.hover.PNG" alt="Contact Hover" class="hover-img">
+      </a>
+    </nav>
+  </header>
+
+  <div class="feedback-widget-wrapper">
+    <div class="feedback-widget">
+      <h2>We Want to Hear From You!</h2>
+      <form id="feedback-form">
+        <label for="category">What would you like to see next?</label>
+        <select id="category" name="category">
+          <option value="clothing-design">Clothing Design</option>
+          <option value="site-feature">Site Feature</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="message">Your Feedback:</label>
+        <textarea id="message" name="message" rows="6" placeholder="Tell us your thoughts..." required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+
+      <div id="confirmation-message" class="confirmation-message" style="display:none;">
+        <p>Thank you for your feedback!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

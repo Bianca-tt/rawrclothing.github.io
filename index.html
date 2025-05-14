@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rawr</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    body {
+      font-size: 70px;
+      background-color: #121212;
+      color: white;
+      line-height: 1.6;
+      cursor: url('curser.can.PNG'), auto;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-grow: 1;
+    }
+
+    header nav a {
+      font-size: 3rem; 
+    }
+
+    .nav-icon {
+      display: block;
+      width: 500px;
+      height: 500px;
+      position: relative;
+    }
+
+    .nav-icon img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-img {
+      opacity: 0;
+    }
+
+    .nav-icon:hover .hover-img {
+      opacity: 1;
+    }
+
+    .nav-icon:hover .default-img {
+      opacity: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      animation: fadeIn 5s forwards;
+      opacity: 0;
+    }
+
+    .hero h1 {
+      font-size: 25rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease; 
+    }
+
+    .hero h1:hover {
+      transform: scale(1.1); 
+      color: #530000; 
+    }
+
+    .hero p {
+      font-size: 10rem;
+      transition: all 0.3s ease; 
+    }
+
+    .hero p:hover {
+      transform: scale(1.1); 
+      color: #530000; 
+    }
+
+    .tag-wall {
+      padding: 2rem 2rem 4rem;
+      text-align: center;
+    }
+
+    #graffitiWall {
+      width: 90vw;
+      height: 80vh;
+      max-width: 100%;
+      background: url('brickbrick.PNG') center center / cover no-repeat;
+      cursor: crosshair;
+      margin-top: 2rem;
+      border: 2px solid #444;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .eraser-button {
+      margin-top: 1.5rem;
+      padding: 3rem 5rem; 
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 3rem; 
+      transition: all 0.3s ease; 
+    }
+
+    .eraser-button:hover {
+      background-color: #530000; 
+      transform: scale(1.1); 
+    }
+
+    nav a:hover {
+      color: #530000;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+        <a href="index.html" class="nav-icon">
+            <img src="rawr.logo.PNG" alt="Rawr" class="default-img">
+            <img src="rawr.hover.PNG" alt="Rawr Hover" class="hover-img">
+          </a>
+      <a href="gallery.html" class="nav-icon">
+        <img src="gallery.PNG" alt="Gallery" class="default-img">
+        <img src="gallery.hover.PNG" alt="Gallery Hover" class="hover-img">
+      </a>
+      <a href="about.html" class="nav-icon">
+        <img src="about.PNG" alt="About" class="default-img">
+        <img src="about.hover.PNG" alt="About Hover" class="hover-img">
+      </a>
+      <a href="contact.html" class="nav-icon">
+        <img src="contact.PNG" alt="Contact" class="default-img">
+        <img src="contact.hover.PNG" alt="Contact Hover" class="hover-img">
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Tag into the world of Rawr</h1>
+    <p>Street fashion meets street art.</p>
+  </section>
+
+  <section class="tag-wall">
+    <h2>Give Us Your Best Tag</h2>
+    <canvas id="graffitiWall"></canvas>
+    <button class="eraser-button" id="toggleEraser">Use Eraser</button>
+  </section>
+
+  <script>
+    const canvas = document.getElementById('graffitiWall');
+    const ctx = canvas.getContext('2d');
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+
+    let painting = false;
+    let isErasing = false;
+    const lineWidth = 20;
+
+    canvas.addEventListener('mousedown', (e) => {
+      painting = true;
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+    });
+
+    canvas.addEventListener('mouseup', () => {
+      painting = false;
+    });
+
+    canvas.addEventListener('mouseout', () => {
+      painting = false;
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      if (!painting) return;
+      ctx.strokeStyle = isErasing ? '#121212' : 'white';
+      ctx.lineWidth = lineWidth;
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+    });
+
+    document.getElementById('toggleEraser').addEventListener('click', () => {
+      isErasing = !isErasing;
+      document.getElementById('toggleEraser').textContent = isErasing ? 'Use Brush' : 'Use Eraser';
+    });
+  </script>
+</body>
+</html>

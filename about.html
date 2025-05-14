@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rawr</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    body {
+      font-size: 50px;
+      background-color: #121212;
+      color: white;
+      line-height: 1.6;
+      cursor: url('curser.can.PNG'), auto;
+    }
+
+    body {
+  background-image: url('aboutblurbreal.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  min-height: 200vh;
+  color: white;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+
+    header {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-grow: 1;
+    }
+
+    header nav a {
+      font-size: 3.5rem; 
+    }
+
+    .nav-icon {
+      display: block;
+      width: 500px;
+      height: 500px;
+      position: relative;
+    }
+
+    .nav-icon img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-img {
+      opacity: 0;
+    }
+
+    .nav-icon:hover .hover-img {
+      opacity: 1;
+    }
+
+    .nav-icon:hover .default-img {
+      opacity: 0;
+    }
+
+
+
+</style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="nav-icon">
+                <img src="rawr.logo.PNG" alt="Rawr" class="default-img">
+                <img src="rawr.hover.PNG" alt="Rawr Hover" class="hover-img">
+              </a>
+          <a href="gallery.html" class="nav-icon">
+            <img src="gallery.PNG" alt="Gallery" class="default-img">
+            <img src="gallery.hover.PNG" alt="Gallery Hover" class="hover-img">
+          </a>
+          <a href="about.html" class="nav-icon">
+            <img src="about.PNG" alt="About" class="default-img">
+            <img src="about.hover.PNG" alt="About Hover" class="hover-img">
+          </a>
+          <a href="contact.html" class="nav-icon">
+            <img src="contact.PNG" alt="Contact" class="default-img">
+            <img src="contact.hover.PNG" alt="Contact Hover" class="hover-img">
+          </a>
+        </nav>
+      </header>
+
+      
